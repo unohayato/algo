@@ -8,7 +8,23 @@
 
 """
 
-[(0, 50), (50, 100)]
-[(0, 50), (50, 100), (25, 75)]
-[(10, 50), (20, 30), (60, 100), (70, 90)]
-[(900, 910), (940, 12000), (950, 1120), (1100, 1130), (1500, 1900), (1800, 2000)]
+classes1 = [(0, 50), (50, 100)]
+answer1 = 1
+
+classes2 = [(0, 50), (50, 100), (25, 75)]
+answer2 = 2
+
+classes3 = [(10, 50), (20, 30), (60, 100), (70, 90)]
+answer3 = 2
+
+classes4 = [(900, 910), (940, 12000), (950, 1120), (1100, 1130), (1500, 1900), (1800, 2000)]
+answer4 = 3
+
+def solution(classes):
+  return 1
+
+assert solution(classes1) == answer1
+assert solution(classes2) == answer2
+assert solution(classes3) == answer3
+assert solution(classes4) == answer4
+print('ok')
