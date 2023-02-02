@@ -20,8 +20,22 @@ answer3 = 2
 classes4 = [(900, 910), (940, 12000), (950, 1120), (1100, 1130), (1500, 1900), (1800, 2000)]
 answer4 = 3
 
+def overlaps(a, b):
+  return b[0] < a[0] and a[0] < b[1]
+
 def solution(classes):
-  return 1
+  num_classes = len(classes)
+  max_rooms = 1
+  for i in range(num_classes):
+    rooms = 1
+    for j in range(num_classes):
+      if i == j:
+        continue
+      if overlaps(classes[i], classes[j]):
+        rooms += 1
+        max_rooms = max(max_rooms, rooms)
+      
+  return max_rooms
 
 assert solution(classes1) == answer1
 assert solution(classes2) == answer2
