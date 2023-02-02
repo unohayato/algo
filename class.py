@@ -37,8 +37,29 @@ def solution(classes):
       
   return max_rooms
 
+def first(tuple):
+  return tuple[0]
+
+def solution2(classes):
+  timeline = []
+  for start, end in classes:
+    timeline.extend([(start, True), (end, False)])
+  timeline.sort(key=first)
+  max_rooms = 0
+  rooms = 0
+  for _, is_start in timeline:
+    rooms += 1 if is_start else -1
+    max_rooms = max(max_rooms, rooms)
+  return max_rooms
+
 assert solution(classes1) == answer1
 assert solution(classes2) == answer2
 assert solution(classes3) == answer3
 assert solution(classes4) == answer4
+print('ok')
+
+assert solution2(classes1) == answer1
+assert solution2(classes2) == answer2
+assert solution2(classes3) == answer3
+assert solution2(classes4) == answer4
 print('ok')
